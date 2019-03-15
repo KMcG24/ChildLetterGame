@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import RandomWord from "../RandomWord";
 import Key from "../Key";
 import "./App.css";
+import data from "../../Data";
+import Header from "../Header";
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      data: ["apple", "banana", "cat"],
-      isPlaying: true,
+     isPlaying: true,
+       data: data,
       keypressed: null
     };
   }
@@ -25,6 +28,7 @@ class App extends Component {
         }));
       }
     });
+
   }
 
   randomWord = data => {
@@ -36,7 +40,10 @@ class App extends Component {
     // this.stateRANDOMWORD
     return (
       <>
+        <Header />
+
         <div className="Game" />
+
         <RandomWord word={this.randomWord(this.state.data)} />
         <Key
           keyPressed={this.state.keypressed}
@@ -45,6 +52,7 @@ class App extends Component {
       </>
     );
   }
+
 }
 
 export default App;
