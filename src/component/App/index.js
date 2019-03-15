@@ -42,29 +42,20 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header />
-        <div className={css.container}>
-          <img src={child} alt="child" />
-          <div className={css.bubble}>
-            <RandomWord word={this.randomWord(this.state.data)} />
-            <Key
-              keyPressed={this.state.keypressed}
-              word={this.randomWord(this.state.data)}
-            />
-          </div>
-        </div>
         {!this.state.isPlaying ? (
           <Endgame score={this.state.score} />
         ) : (
           <>
             <Header />
-            <div className="Game">
-              <RandomWord word={this.randomWord(this.state.data)} />
-
-              <Key
-                keyPressed={this.state.keypressed}
-                word={this.randomWord(this.state.data)}
-              />
+            <div className={css.container}>
+              <img src={child} alt="child" />
+              <div className={css.bubble}>
+                <RandomWord word={this.randomWord(this.state.data)} />
+                <Key
+                  keyPressed={this.state.keypressed}
+                  word={this.randomWord(this.state.data)}
+                />
+              </div>
             </div>
           </>
         )}
