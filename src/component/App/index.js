@@ -6,6 +6,7 @@ import data from "../../Data";
 import Header from "../Header";
 import css from "../RandomWord/randomword.module.css";
 import child from "../../images/happychild.png";
+import Endgame from "../EndGame";
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener("keydown", event => {
-      if (event.keyCode === "27") {
+      console.log(event.keyCode);
+      if (event.keyCode === 27) {
         this.setState(() => ({
           isPlaying: false
         }));
@@ -38,7 +40,6 @@ class App extends Component {
   };
 
   render() {
-    // this.stateRANDOMWORD
     return (
       <>
         <Header />
@@ -52,6 +53,21 @@ class App extends Component {
             />
           </div>
         </div>
+        {!this.state.isPlaying ? (
+          <Endgame score={this.state.score} />
+        ) : (
+          <>
+            <Header />
+            <div className="Game">
+              <RandomWord word={this.randomWord(this.state.data)} />
+
+              <Key
+                keyPressed={this.state.keypressed}
+                word={this.randomWord(this.state.data)}
+              />
+            </div>
+          </>
+        )}
       </>
     );
   }
