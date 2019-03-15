@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: row;
+  height: 50vh;
 }
 
 .bubble {
@@ -16,7 +17,7 @@
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin-left: 350px;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 .bubble:before {
   display: flex;
