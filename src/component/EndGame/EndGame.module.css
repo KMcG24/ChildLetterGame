@@ -1,0 +1,11 @@
+.EndGame {
+	background-color: aqua;
+	font-family: sans-serif;
+}
+
+.wellDone {
+	height: 30vh;
+	width: 80vw;
+	background-color: red;
+	font-size: 40px;
+}
