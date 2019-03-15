@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import RandomWord from "../RandomWord";
 import "./App.css";
+import data from "../../Data";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: ["apple", "banana", "cat"], isPlaying: true };
+    this.state = { data: data, isPlaying: true };
   }
 
   randomWord = data => {
