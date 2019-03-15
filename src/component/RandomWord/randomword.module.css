@@ -1,4 +1,13 @@
-.word {
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 300px;
   height: 250px;
   background: red;
@@ -9,7 +18,8 @@
   margin-left: 350px;
   margin-top: 100px;
 }
-.word:before {
+.bubble:before {
+  display: flex;
   content: "";
   position: absolute;
   right: 100%;
@@ -19,4 +29,13 @@
   border-top: 13px solid transparent;
   border-right: 26px solid red;
   border-bottom: 13px solid transparent;
+}
+
+.word {
+  font-size: 30px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
 }
