@@ -9,3 +9,10 @@
 	background-color: red;
 	font-size: 40px;
 }
+
+.score {
+	height: 20vh;
+	width: 80vw;
+	background-color: yellowgreen;
+	font-size: 30px;
+}
