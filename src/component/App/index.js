@@ -14,8 +14,7 @@ class App extends Component {
 
     this.state = {
       isPlaying: true,
-      data: data,
-      keypressed: null
+      data: data
     };
   }
 
@@ -34,8 +33,30 @@ class App extends Component {
     });
   }
 
+  // randomWord() {
+  //   window.addEventListener("keydown", event =>  {
+  //     if (event.keyCode === 13) {
+  //       this.setState(() => ({
+  //         isChanging: true
+  //       }));
+  //     }
+  //   }
+  //   )
+  // }
+
   randomWord = data => {
     const word = data[Math.floor(Math.random() * data.length)];
+    {
+      //prevent word from changing on any keypress
+      window.addEventListener("keydown", event => {
+        if (event.keyCode === 13) {
+          this.setState(() => ({
+            isChanging: true
+          }));
+        }
+      });
+    }
+
     return word;
   };
 
@@ -63,5 +84,6 @@ class App extends Component {
     );
   }
 }
+//  };
 
 export default App;
