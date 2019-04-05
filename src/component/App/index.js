@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import RandomWord from "../RandomWord";
+import WordInput from "../WordInput";
 import Key from "../Key";
 import "./App.css";
 import data from "../../Data";
 import Header from "../Header";
+import styles from "../WordInput/WordInput.module.css";
 import css from "../RandomWord/randomword.module.css";
 import child from "../../images/happychild.png";
 import Endgame from "../EndGame";
+
 
 class App extends Component {
   constructor(props) {
@@ -26,11 +29,18 @@ class App extends Component {
         this.setState(() => ({
           isPlaying: false
         }));
-      } else {
-        this.setState(() => ({
-          keypressed: String.fromCharCode(event.keyCode)
-        }));
+      } 
+      if (event.keyCode ===13) {
+this.setState(() => ({
+isPlaying: true,
+keydown: String.fromCharCode(event.keyCode)
+
+
+})
+)
+
       }
+ 
     });
   }
 
@@ -38,6 +48,8 @@ class App extends Component {
     const word = data[Math.floor(Math.random() * data.length)];
     return word;
   };
+
+
 
   render() {
     return (
@@ -50,6 +62,8 @@ class App extends Component {
             <div className={css.container}>
               <img src={child} alt="child" />
               <div className={css.bubble}>
+              <WordInput/>
+              <br></br>
                 <RandomWord word={this.randomWord(this.state.data)} />
                 <Key
                   keyPressed={this.state.keypressed}
