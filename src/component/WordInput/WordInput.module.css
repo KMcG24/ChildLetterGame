@@ -1,6 +1,12 @@
 .inputField {
-    background-color:lightblue;
-    height: 100px;
-    width: 150px;
-    font-size: 35px
+  background-color: lightblue;
+  height: 100px;
+  width: 150px;
+  font-size: 35px;
+}
+
+.answer {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  border: purple, 20px;
 }

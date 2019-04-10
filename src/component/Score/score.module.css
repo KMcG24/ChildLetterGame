@@ -1,0 +1,8 @@
+.scoreBox {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  height: 45px;
+  width: 30vw;
+  background-color: lightblue;
+}
