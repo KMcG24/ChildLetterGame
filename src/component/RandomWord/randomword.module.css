@@ -1,4 +1,10 @@
-.container {
+.word {
+  display: flex;
+  width: 400px;
+  border: 2px red;
+}
+
+/* .container {
   display: flex;
   flex-direction: row;
   height: 50vh;
@@ -39,4 +45,4 @@
 img {
   height: 200px;
   width: 200px;
-}
+} */

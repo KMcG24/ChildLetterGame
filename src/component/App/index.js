@@ -84,7 +84,7 @@ class App extends Component {
           <>
             <Header />
             <div className={css.container}>
-              <img src={child} alt="child" />
+              {/* <img src={child} alt="child" /> */}
               <div className={css.bubble}>
                 <WordInput
                   value={this.state.value}
